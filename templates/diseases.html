@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseases Repository</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2B2B2B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            width: 25%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5%;
+            padding-top: 20%;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+            text-align: left;
+        }
+
+        td, th {
+            color: #fff;
+            text-align: center;
+        }
+
+        .table td, .table th {
+            vertical-align: middle;
+        }
+
+        .container {
+            margin-top: 340%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            RetinaScan
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/diseases">Diseases</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about-us">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Acronym</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Diabetic Retinopathy</td>
+                    <td>DR</td>
+                    <td>microvascular complication of diabetes mellitus and is
+                        a leading cause of vision loss in the elderly and working population. The image is labeled
+                        as DR if it shows any of the following clinical findings: microaneurysms, retinal dot and
+                        blot hemorrhage, hard exudates or cotton wool spots.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/DR.png') }}" alt="Diabetic Retinopathy" width="100%"></td>
+                </tr>
+                <tr>
+                    <td>Age-Related Macular Degeneration</td>
+                    <td>ARMD</td>
+                    <td>Progressive chronic disease of the
+                        central retina that usually develops in old age people and is a leading cause of vision loss.
+                        The image is labeled as ARMD if it shows any of the following clinical findings: multiple
+                        drusen in macular region, geographic atrophy involving the fovea, features
+                        of neovascular age-related macular degeneration</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ARMD.png') }}" alt="Age-Related Macular Degeneration" width="100%"></td>
+                </tr>
+                <tr>
+                    <td>Media Haze</td>
+                    <td>MH</td>
+                    <td>The opacity of media can be a hallmark for the presence of
+                        cataracts, vitreous opacities, corneal edema or small pupils. Moreover, some other
+                        artifacts may be introduced as a result of acquisition procedures, such as eyelash artifacts
+                        and artifacts introduced by the instrument.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MH.png') }}" alt="Media Haze" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Drusens</td>
+                    <td>DN</td>
+                    <td>Drusens are yellow or white extracellular deposits located
+                        between the retinal pigment epithelium (RPE) and Bruch's membrane. They naturally occur
+                        in the aged population. The presence of drusen is a hallmark and early sign of significant
+                        risk of age-related macular degeneration, geographic atrophy, choroidal neovascularization,
+                        and development of RPE abnormalities</td>
+                    <td><img src="{{ url_for('static', filename='diseases/DN.png') }}" alt="Drusens" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Myopia</td>
+                    <td>MYA</td>
+                    <td>Myopia is characterized by degenerative changes in the choroid, sclera, and
+                        RPE. Vision loss due to myopia can be progressive and irreversible.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MYA.png') }}" alt="Myopia" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Branch retinal vein occlusion</td>
+                    <td>BRVO</td>
+                    <td>Branch retinal vein occlusion is the most common visual disorder causing visual blurring in the peripheral region. The visual signs in the retina can be any of the following: occlusion of one or more branches of the central retinal vein, dot and blot hemorrhage, flame-shaped hemorrhage, soft and hard exudates, retinal edema, and dilated, tortuous vein.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/BRVO.png') }}" alt="Branch retinal vein occlusion" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Tessellation</td>
+                    <td>TSLN</td>
+                    <td>Tessellation in the fundus images appears due to the thinning of the RPE and choriocapillaris. The choroidal vessels are visible due to the reduced density of the pigments. Mild tessellation occurs with aging and it might be present in normal retinal image. Moderate tessellations are related to myopia.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/TSLN.png') }}" alt="Tessellation" width="100%"></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Epiretinal membrane</td>
+                    <td>ERM</td>
+                    <td>Epiretinal membrane is a thin sheet of glial cells that appears as an irregular light reflex on the surface of macular region of the retina. Symptoms associated with ERM are loss of central vision and decreased visual acuity.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ERM.png') }}" alt="Epiretinal membrane" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Laser scars</td>
+                    <td>LS</td>
+                    <td>Laser scars indicate that patient had underwent laser therapy which is predominately preferred treatment method to stop the progression of vascular leaks. This treatment results in circular or irregular shaped scars on the retinal surface.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/LS.png') }}" alt="Laser scars" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Macular scar</td>
+                    <td>MS</td>
+                    <td>Macular scar is either caused by infection or inflammatory intraocular reaction that causes slight injury to RPE. It is responsible for complications or decreased vision.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MS.png') }}" alt="Macular scar" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Central serous retinopathy</td>
+                    <td>CSR</td>
+                    <td>Central serous retinopathy is characterized as a round serous detachment of the neurosensory retina from the underlying RPE. The subretinal fluid is a clinical indicator for the presence of CSR. The vision loss depends on the amount of detachment of neurosensory retina.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CSR.png') }}" alt="Central serous retinopathy" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Optic disc cupping</td>
+                    <td>ODC</td>
+                    <td>Optic disc cupping is the thinning of neuroretinal rim such that optic disc appears excavated. Pathological ODC is generally referred to as glaucoma. However, several other non-glaucomatous diseases, such as arteritic anterior ischemic optic neuropathy and central retinal vein occlusion, also result in ODC.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ODC.png') }}" alt="Optic disc cupping" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Central retinal vein occlusion</td>
+                    <td>CRVO</td>
+                    <td>Central retinal vein occlusion is the occlusion of central retinal vein with a start point at or proximal to the lamina cribrosa of the optic nerve. The clinical signs are presence of flame-shaped hemorrhages. It may develop permanent, severe, visual impairment.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CRVO.png') }}" alt="Central retinal vein occlusion" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Tortuous vessels</td>
+                    <td>TV</td>
+                    <td>Tortuous vessels is characterized by pattern of marked tortuosity of the retinal blood vessels. It is associated with diseases, like hypertension, diabetes, and other genetic disorders.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/TV.png') }}" alt="Tortuous vessels" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Asteroid hyalosis</td>
+                    <td>AH</td>
+                    <td>Asteroid hyalosis is a condition in which numerous astroid bodies are dispersed in vitreous. The presence of AH may be associated with diabetes, hyperlipidemia, or hypertension.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/AH.png') }}" alt="Asteroid hyalosis" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Optic disc pallor</td>
+                    <td>ODP</td>
+                    <td>Optic disc pallor refers to pale yellow discoloration of the optic disc, as well as absence of many small vessels. Vision loss due to ODP depends on the degree of pallor.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ODP.png') }}" alt="Optic disc pallor" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Optic disc edema</td>
+                    <td>ODE</td>
+                    <td>Optic disc edema includes findings, such as papilledema, papillitis, and choked or swollen discs. It is a classic marker that represent initial signs of anterior ischemic optic neuropathy, this may eventually lead to loss of vision.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ODE.png') }}" alt="Optic disc edema" width="100%"></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Optociliary shunt</td>
+                    <td>ST</td>
+                    <td>Optociliary shunt vessels are vessels on the optic nerve head that connect the retinal venous system to the choroid. The clinical findings are presence of prepapillary vascular loops or optociliary shunt vessels. It causes slowly progressive vision loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ST.png') }}" alt="Optociliary shunt" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Anterior ischemic optic neuropathy</td>
+                    <td>AION</td>
+                    <td>Anterior ischemic optic neuropathy is caused by the damage of anterior part of optic nerve resulting in ischemia. In middle-aged and elderly people, it is one of the leading cause of seriously impaired vision or blindness.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/AION.png') }}" alt="Anterior ischemic optic neuropathy" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Parafoveal telangiectasia</td>
+                    <td>PT</td>
+                    <td>Parafoveal telangiectasia is a clinical condition characterized by yellow, lipid-rich exudation or parafoveal graying or abnormalities from distention and tortuous blood vessels and incompetent retinal capillaries in the juxtafoveolar region. It is responsible for central vision loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/PT.png') }}" alt="Parafoveal telangiectasia" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Retinal traction</td>
+                    <td>RT</td>
+                    <td>Retinal traction detachment is separation of the neurosensory retina from the RPE due to traction. Under the label RT, images showing presence of traction and retinal traction detachment are included.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/RT.png') }}" alt="Retinal traction" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Retinitis</td>
+                    <td>RS</td>
+                    <td>Retinitis is characterized by the presence of vitreous inflammation, macular star, intraretinal hemorrhage, phlebitis, arteritis, and hyperemic disc. The most common visual loss in this case is central vision loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/RS.png') }}" alt="Retinitis" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Chorioretinitis</td>
+                    <td>CRS</td>
+                    <td>Chorioretinitis causes inflammation of choroid and retina which results in vision-threatening complications. It is usually caused by infections, like toxoplasmosis and cytomegalovirus.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CRS.png') }}" alt="Chorioretinitis" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Exudation</td>
+                    <td>EDN</td>
+                    <td>Exudation: The hard exudates are white or yellowish lipid deposits with sharp edges. Circinate retinopathy is a clinical condition marked by a circle of exudates surrounding the macular area. Exudative maculopathy is a clinical condition marked by masses exudates in the macular region. Macular star is a star-like formation of exudates in the macular region. All these conditions are labeled under category EDN.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/EDN.png') }}" alt="Exudation" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Retinal pigment epithelium changes</td>
+                    <td>RPEC</td>
+                    <td>Retinal pigment epithelium changes are characterized by the structural changes, such as increased thickness of Bruch's membrane, loss of melanin granules, accumulation of lipofuscin, formation of drusen, increase in the density of residual bodies, accumulation of basal deposits on or within Bruch’s membrane, and disorganization of the basal infoldings and microvilli atrophy. These changes lead to severe visual loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/RPEC.png') }}" alt="Retinal pigment epithelium changes" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Macular hole</td>
+                    <td>MHL</td>
+                    <td>Macular hole is a small retinal break located in the center of the fovea, causing significant vision impairment.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MHL.png') }}" alt="Macular hole" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Retinitis pigmentosa</td>
+                    <td>RP</td>
+                    <td>Retinitis pigmentosa, retina progressively degenerates. The visual signs are bone-spicule deposits and arterial narrowing. It causes night blindness, which eventually leads to complete blindness.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/RP.png') }}" alt="Retinitis pigmentosa" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Cotton-wool spots</td>
+                    <td>CWS</td>
+                    <td>Cotton-wool spots are whitish, fluffy patches appearing on the surface of retina. They are manifestations of common retinal diseases, like diabetes mellitus, acquired immunodeficiency syndrome, and systemic hypertension.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CWS.png') }}" alt="Cotton-wool spots" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Coloboma</td>
+                    <td>CB</td>
+                    <td>Coloboma is marked as a missing portion of tissue in both the choroid and retina at the time of birth. It can be visualized as a white zone of the retinal fundus images. It is responsible for the loss of visual fields, cataract and retinal detachment may occur.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CB.png') }}" alt="Coloboma" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Optic disc pit maculopathy</td>
+                    <td>ODPM</td>
+                    <td>Optic disc pit is a rare unilateral and sporadic congenital abnormality of the optic disc. ODPM is characterized by intraretinal and subretinal fluid at the macula, causing progressive visual loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/ODPM.png') }}" alt="Optic disc pit maculopathy" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Preretinal hemorrhage</td>
+                    <td>PRH</td>
+                    <td>Preretinal hemorrhage usually appears as a boat-shaped hemorrhage which obscures the underlying retina. Underlying causes include bleeding from neovascularization, vascular occlusion, hypertensive retinopathy, retinal tear, posterior vitreous detachment and rupture of the internal limiting membrane.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/PRH.png') }}" alt="Preretinal hemorrhage" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Myelinated nerve fibers</td>
+                    <td>MNF</td>
+                    <td>Myelinated nerve fibers are inborn irregularities that are characterized as gray-white opaque lesions with feathery edges. They may be located along nerve fibers of the optic disc or elsewhere on the retina. It is associated with diseases, like pituitary tumor, embolism of the central retinal, multiple sclerosis, and optic nerve atrophy.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MNF.png') }}" alt="Myelinated nerve fibers" width="100%"></td>
+                </tr>
+                
+                
+                <tr>
+                    <td>Hemorrhagic retinopathy</td>
+                    <td>HR</td>
+                    <td>Hemorrhagic retinopathy is a particular form of retinopathy which is hemorrhagic in nature. It is associated with diabetes, hypertension, and occlusion of the central vein.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/HR.png') }}" alt="Hemorrhagic retinopathy" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Central retinal artery occlusion</td>
+                    <td>CRAO</td>
+                    <td>Central retinal artery occlusion occurs due to embolus blocking the central retinal artery. It is characterized by pale, whitening, and retinal swelling. It is responsible for sudden, catastrophic visual loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CRAO.png') }}" alt="Central retinal artery occlusion" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Tilted disc</td>
+                    <td>TD</td>
+                    <td>Tilted disc is tilting of the optic disc and usually occurs bilaterally. It is associated with high myopia.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/TD.png') }}" alt="Tilted disc" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Cystoid macular edema</td>
+                    <td>CME</td>
+                    <td>Cystoid macular edema is characterized by the multiple cyst-like (cystoid) areas in the macula and causes retinal edema (swelling). It causes decreased or blurred central vision.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CME.png') }}" alt="Cystoid macular edema" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Post-traumatic choroidal rupture</td>
+                    <td>PTCR</td>
+                    <td>Post-traumatic choroidal rupture are breaks in the choroid, Bruch's membrane, and RPE which occurs as an effect of blunt ocular trauma. It leads to serous macular or haemorrhagic detachment.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/PTCR.png') }}" alt="Post-traumatic choroidal rupture" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Choroidal folds</td>
+                    <td>CF</td>
+                    <td>Choroidal folds is a series of dark and light lines usually temporal and confined to the posterior pole. They occur after some surgical procedures and in a variety of ocular diseases.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CF.png') }}" alt="Choroidal folds" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Vitreous hemorrhage</td>
+                    <td>VH</td>
+                    <td>Vitreous hemorrhage is extravasated blood in one of the spaces created around the vitreous body. It is a result of neovascularization or retinal tears or blood vessel bleeding.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/VH.png') }}" alt="Vitreous hemorrhage" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Macroaneurysm</td>
+                    <td>MCA</td>
+                    <td>Macroaneurysm is fusiform or round dilation of the retinal arterioles which occur in the temporal retina. It is generally unilateral and surrounded by circinate exudation. The central vision loss is due to the presence of edema, hemorrhage, and exudation.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/MCA.png') }}" alt="Macroaneurysm" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Vasculitis</td>
+                    <td>VS</td>
+                    <td>Vasculitis is inflammation of retinal blood vessels. It is characterized by white sheathing due to the presence of exudates around retinal blood vessels or cuffing of the affected vessels. It causes exudation, retinal swelling, and macular edema.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/VS.png') }}" alt="Vasculitis" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Branch retinal artery occlusion</td>
+                    <td>BRAO</td>
+                    <td>Branch retinal artery occlusion occurs due to acute retinal artery obstructions. It may cause sectoral visual field loss.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/BRAO.png') }}" alt="Branch retinal artery occlusion" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Plaque</td>
+                    <td>PLQ</td>
+                    <td>Plaque is bright orange-yellow in color and are located in retinal arteries. If the plaque is present in retina then refer the patient for investigation of the cardiovascular system.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/PLQ.png') }}" alt="Plaque" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Hemorrhagic pigment epithelial detachment</td>
+                    <td>HPED</td>
+                    <td>Hemorrhagic pigment epithelial detachment the pigment epithelium is separated due to hemorrhage from the Bruch's membrane. It is a predictive feature for the presence of polypoidal choroidal vasculopathy or choroidal neovascularization.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/HPED.png') }}" alt="Hemorrhagic pigment epithelial detachment" width="100%"></td>
+                </tr>
+                
+                <tr>
+                    <td>Collateral</td>
+                    <td>CL</td>
+                    <td>Collateral is new retinal vessels developed within the framework of existing vessel network. It is a hallmark for the disease, like optic disc drusen, high myopia, and diabetes.</td>
+                    <td><img src="{{ url_for('static', filename='diseases/CL.png') }}" alt="Collateral" width="100%"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

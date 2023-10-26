@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2B2B2B;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .navbar-brand img {
+            width: 25%;
+        }
+
+
+        .profile {
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        .profile h3 {
+            margin-top: 10px;
+        }
+
+        .description {
+            margin-top: 20px;
+        }
+
+        p, h3 {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='logo.png') }}" width="30" height="30" class="d-inline-block align-top" alt="">
+            RetinaScan
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/diseases">Diseases</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/about-us">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 profile">
+                <h3>Pierre VISCARDI</h3>
+                <p class="category">Deployment Specialist & ML Support</p>
+                <p class="description">Pierre supported Ulysse during the development of the ML and successfully deployed the website on Azure. Thanks to his skills, he brought significant contributions to the team.
+                </p>
+            </div>
+
+            <div class="col-md-4 profile">
+                <h3>Ulysse DELEPOULLE</h3>
+                <p class="category">Lead Machine Learning Engineer</p>
+                <p class="description">Ulysse managed the Machine Learning (ML) aspect of the project and successfully created a categorical model. He deeply analyzed the dataset and understood its inner workings.</p>
+            </div>
+
+            <div class="col-md-4 profile">
+                <h3>Joseph BEAUMONT</h3>
+                <p class="category">Full-Stack Developer & ML Integrator</p>
+                <p class="description">Joseph bridged the gap between Machine Learning and the web. Using Python, HTML, JS, and CSS, he crafted a pleasant interface that fully harnesses the power of the ML model.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
