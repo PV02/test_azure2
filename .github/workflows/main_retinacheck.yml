@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'RetinaCheck'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EE0CFF6BD24F46B49CE209C963681ADE }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6A6D672488684418B1E1146F0B60FB10 }}
