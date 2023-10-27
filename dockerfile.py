@@ -17,7 +17,7 @@ COPY labels.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Exposer le port sur lequel l'application s'exécutera
-EXPOSE 5000
+EXPOSE 8000
 
 # Commande pour exécuter l'application
 CMD ["python", "./application.py"]
